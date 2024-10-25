@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutors</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="tutors.css">
+    <script src="../js/shared.js"></script>
+    <script src="tutors.js" defer></script> <!-- Link to the tutor card script -->
+</head>
+<body>
+    <!-- navbar  -->
+
+    <!-- class for cards -->
+    <div class="tutor-cards" id="tutorCards">
+        <!-- Tutor cards will be injected here -->
+    </div>
+
+    <!-- cards -->
+    <script>
+        // Sample data structure for tutors
+        const tutors = {
+            en: [
+                {
+                    name: "Tanuj Dev",
+                    age: 23,
+                    location: "Uttarakhand",
+                    charges: "₹1500/hr",
+                    specialization: "Expert in teaching strategies for children with Dyslexia.",
+                    language: "English",
+                    image: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg"
+                },
+                {
+                    name: "Sunitha Ramadurai ",
+                    age: 29,
+                    location: "Bangalore",
+                    charges: "₹900-1200/hr",
+                    specialization: "Life Coaching on Confidence and Learning Skills",
+                    language: "English",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_UKh-Sxj0o9C2HTj7YGbwO99A7r-KY9Jlev6Zb5EuEMG2_bFvRv4k8X1Fgfxu0yR8Cko&usqp=CAU"
+                },
+                {
+                    name: "Silpa Jasti",
+                    age: 31,
+                    location: "Chennai",
+                    charges: "₹1000-2000/hr",
+                    specialization: "Special Educator",
+                    language: "English",
+                    image: "https://media.licdn.com/dms/image/v2/D5603AQGQ4nSxF34HiA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709307412105?e=2147483647&v=beta&t=OZC6tVi_DfVEOqvPSCS7wJFIwoJRlDSIZtKpvtHWVUY"
+                },
+                {
+                    name: "Parth Vuroy",
+                    age: 29,
+                    location: "Rajasthan",
+                    charges: "₹1000/hr",
+                    specialization: "Special Educator, Child and Adolescent Counsellor",
+                    language: "English",
+                    image: "https://img.freepik.com/free-photo/closeup-young-hispanic-man-casuals-studio_662251-600.jpg"
+                }
+                // Add more English tutors as needed
+            ],
+            hi: [
+                {
+                    name: "Gaurang Mehra",
+                    age: 30,
+                    location: "Delhi",
+                    charges: "₹1000/hr",
+                    specialization: "Expert in teaching strategies for children with Dyslexia.",
+                    language: "Hindi",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXF5ACUpC_BsOD5ntbFmDq4KC2xCESbHoMwQ&s"
+                },
+                {
+                    name: "Dr Jyoti Bajaj",
+                    age: 34,
+                    location: "Mumbai",
+                    charges: "₹800/hr",
+                    specialization: "Specialist in ADHD, focusing on interactive learning.",
+                    language: "Hindi",
+                    image: "https://media.istockphoto.com/id/1029826628/id/foto/one-confident-attractive-indian-businesswoman-gambar-saham.jpg?s=170667a&w=0&k=20&c=Fh_2sME0zuxPWhK0XezV6md_6rQ9ZNXXvSS1KSZi7cs="
+                },
+                {
+                    name: "Satakshi Mishra",
+                    age: 28,
+                    location: "karnataka",
+                    charges: "₹1000-2000/hr",
+                    specialization: "Special Educator, Counsellor",
+                    language: "Hindi",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHaB5v2LT-XJNfp2UHlzOHuDd04cys9RIif6CvYfAmBPEKWLC371VTd0aJGezVda1Ykw0&usqp=CAU"
+                },
+                {
+                    name: "Jatin Pandey",
+                    age: 29,
+                    location: "Bangalore",
+                    charges: "₹1200/hr",
+                    specialization: "Special educator and counselor for CWSN.",
+                    language: "Hindi",
+                    image: "https://plus.unsplash.com/premium_photo-1682089869602-2ec199cc501a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ3V5fGVufDB8fDB8fHww"
+                }
+                // Add more Hindi tutors as needed
+            ]
+        };
+
+        function displayTutors() {
+            const language = localStorage.getItem('selectedLanguage');
+            const tutorCards = document.getElementById('tutorCards');
+            tutorCards.innerHTML = ''; // Clear existing cards
+
+            if (language && tutors[language]) {
+                tutors[language].forEach(tutor => {
+                    const card = document.createElement('div');
+                    card.classList.add('tutor-card');
+
+                    card.innerHTML = `
+                    <a href="tutor-details.html?tutor=${tutor.name}" class="tutor-card">
+                        <div class="card-left">
+                            <img src="${tutor.image}" alt="${tutor.name}">
+                        </div>
+                        <div class="card-right">
+                            <h3>${tutor.name}</h3>
+                            <p class="agepara">Age: ${tutor.age}</p>
+                            <p class="specificationpara">${tutor.specialization}</p>
+                            <p><i class="fa-solid fa-location-dot"></i>Location:  ${tutor.location}</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i>Charges: ${tutor.charges}</p>
+                            <p><i class="fa-solid fa-language"></i>Language: ${tutor.language}</p>
+                            </div>
+                    </a>
+                    `;
+                    
+                    tutorCards.appendChild(card);
+                });
+            } else {
+                tutorCards.innerHTML = '<p>No tutors available.</p>';
+            }
+        }
+
+        // Call displayTutors on page load
+        window.onload = displayTutors;
+    </script>
+
+    <!-- section feedback -->
+</body>
+</html>

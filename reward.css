@@ -1,0 +1,643 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.threeblockh1{
+    margin-top: 9rem;
+    margin-bottom: 5rem;
+    font-size:3rem;
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+.threeblock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.reward-card {
+    background-color: #27e971;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 17rem;
+    height: 25rem;
+    
+}
+.reward-card p{
+    font-size: 19px;
+}
+
+.coin-count {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#goToProblemBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 0;
+}
+
+#goToProblemBtn:hover {
+    background-color: #218838;
+}
+
+.daily-problem {
+    margin-top: 20px;
+    display: none;
+    background-color: #27e971;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 17rem;
+}
+
+.problem-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#userAnswer {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: 14rem;
+}
+
+#submitAnswerBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#submitAnswerBtn:hover {
+    background-color: #218838;
+}
+
+#submissionMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.challenges-card {
+    background-color: #27e971;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 17rem;
+    height: 25rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.challenges-card h2 {
+    margin-bottom: 10px;
+}
+
+.challenges-card p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+#moreProblemsBtn,
+#fitnessChallengesBtn ,
+#fitnesChallengesBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+    margin-top: 10px;
+}
+
+#moreProblemsBtn:hover,
+#fitnessChallengesBtn:hover {
+    background-color: #218838;
+}
+
+
+/* third block */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+}
+
+.calendar-container {
+    margin: 20px auto;
+    max-width: 400px; /* Reduced max-width for smaller calendar */
+    background-color: #fff;
+    background-color: #27e971;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 20rem;
+    max-height: 30rem;
+}
+
+h1 {
+    color: black;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; /* Reduced gap for a compact look */
+    margin: 10px 0; /* Reduced margin */
+}
+
+.day {
+    width: 40px; /* Smaller day blocks */
+    height: 40px; /* Adjusted height */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Slightly less rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.day:hover {
+    background-color: #e9ecef;
+    transform: scale(1.05);
+}
+
+/* Updated Dot Styles */
+.completed::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px; /* Smaller dot */
+    height: 10px; /* Smaller dot */
+    background-color: #4caf50; /* Green for completed */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+}
+
+.missed::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px; /* Smaller dot */
+    height: 10px; /* Smaller dot */
+    background-color: #f44336; /* Red for missed */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(244, 67, 54, 0.6);
+}
+
+.month-name {
+    grid-column: span 7;
+    font-weight: bold;
+    font-size: 1.2em; /* Smaller font size for month name */
+    margin: 10px 0;
+    color: #4caf50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.day-number {
+    font-weight: bold;
+}
+
+
+/* navbar */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db; /* Navbar background color */
+    padding: 10px 20px; /* Padding for the navbar */
+}
+
+.logo img {
+    height: 50px; /* Set logo height */
+    border-radius: 100px;
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Display links in a row */
+    gap: 20px; /* Space between links */
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.nav-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add padding around links */
+    border-radius: 5px; /* Round corners for links */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
+}
+
+.profile a {
+    display: flex; /* Center the icon */
+    align-items: center;
+}
+
+.profile-icon {
+    width: 40px; /* Width of the profile icon */
+    height: 40px; /* Height of the profile icon */
+    border-radius: 50%; /* Make the icon round */
+    border: 2px solid black; /* Optional: border around the icon */
+}
+
+.content {
+    padding: 20px; /* Padding for the content area */
+}
+
+/* Dropdown styles */
+.nav-links li {
+    position: relative; /* Needed for absolute positioning of dropdown */
+}
+.about-section {
+    display: none; /* Initially hide the About section */
+    padding: 20px;
+    background-color: #f2f2f2; /* Light background for visibility */
+    border: 1px solid #ccc; /* Border for the section */
+    margin-top: 20px; /* Space above the section */
+}
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to parent */
+    top: 100%; /* Align below the parent */
+    left: 0; /* Align left */
+    background-color: #3498db; /* Dropdown background color */
+    padding: 10px; /* Padding for dropdown */
+    border-radius: 5px; /* Round corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.nav-links li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    margin: 0; /* Reset margin for dropdown items */
+}
+
+.dropdown a {
+    display: block; /* Make dropdown items block-level for full click area */
+    padding: 5px 10px; /* Padding for dropdown items */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
+}
+
+
+/* tutors */
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px; /* Larger font for the navbar */
+}
+
+.tutor-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* max-width: 800px; Center the cards on larger screens */
+    margin: 10px 10px; /* Centering */
+}
+
+.tutor-card {
+    display: flex;
+    /* background-color: white; */
+    background: rgb(0,236,250);
+    background: linear-gradient(90deg, rgba(0,236,250,1) 0%, rgba(28,200,103,1) 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s; /* Add transition for hover effect */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color for text */
+    width:100%;
+}
+.tutor-card:hover {
+    transform: translateX(-5px); /* Slight lift on hover */
+    box-shadow: 10px 16px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-left {
+    background-color: #0cebeb;
+    overflow: hidden;
+}
+
+.card-left img {
+    width: 230px;
+    height: 100%;
+    margin-left:0rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 15px 15px 15px 15px; /* Rounded corners on the left */
+    display:block;
+}
+
+
+.card-right {
+    flex: 2;
+    padding: 25px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center align content */
+    overflow: hidden;
+}
+
+.card-right h3 {
+    margin: 0 0 10px;
+    color: #333; /* Dark color for the name */
+    font-size: 30px; /* Larger font for the name */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.card-right p {
+    margin: 5px 0;
+    color: #555; /* Subtle color for description */
+    line-height: 1.7; /* Improved readability */
+}
+.card-right p i{
+    margin-right: 1rem;
+}
+.agepara {
+    margin: 5px 0;
+    font-size : 1.5rem;
+    color: #555; /* Subtle color for description */
+    line-height: 1.7; 
+}
+.specificationpara
+{
+    margin: 5px 0;
+    font-size : 1.2rem;
+    color: #555; /* Subtle color for description */
+    line-height: 1.7; 
+}
+
+.card-right .specialization {
+    font-weight: bold; /* Bold for specialization */
+    color: #007BFF; /* Match the navbar color */
+}
+
+.card-right .location, 
+.card-right .distance, 
+.card-right .charges {
+    font-style: italic; /* Italics for location, distance, charges */
+    color: #777; /* Lighter color */
+}
+
+
+
+/* footer */
+.footer {
+    background-color: #34495e; /* Darker blue-gray */
+    color: #ecf0f1; /* Light gray */
+    padding: 20px 10px; /* Reduced padding for a smaller footer */
+    font-family: 'Arial', sans-serif; /* Clean font style */
+    text-align: center; /* Centered text */
+    margin-top: 5rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    max-width: 800px; /* Reduced max-width for a smaller footer */
+    margin: 0 auto; /* Centering */
+}
+
+.footer-logo img {
+    width: 120px; /* Smaller logo size */
+    margin-bottom: 10px; /* Reduced space below logo */
+}
+
+.footer-links {
+    margin: 10px 0; /* Reduced margin above and below */
+}
+
+.footer-links h3 {
+    margin-bottom: 10px; /* Reduced space below heading */
+    font-size: 1.3em; /* Slightly smaller font size for heading */
+    color: #f39c12; /* Orange for headings */
+}
+
+.footer-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Reduced space between links */
+}
+
+.footer-links a {
+    color: #bdc3c7; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.footer-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+.footer-socials {
+    margin: 10px 0; /* Reduced margin above and below */
+}
+
+.footer-socials h3 {
+    margin-bottom: 10px; /* Reduced space below heading */
+    font-size: 1.3em; /* Slightly smaller font size for heading */
+    color: #f39c12; /* Orange for headings */
+}
+
+.social-icons {
+    display: flex; /* Flexbox for icons */
+    justify-content: center; /* Center icons */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Reduced space between icons */
+    color: #bdc3c7; /* Icon color */
+    font-size: 20px; /* Slightly smaller icon size */
+    transition: transform 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+    color: #f39c12; /* Change color on hover */
+}
+
+.footer-bottom {
+    margin-top: 10px; /* Reduced space above */
+    font-size: 0.8em; /* Smaller font size */
+    color: #bdc3c7; /* Subtle text color */
+}
+.footer-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center links */
+}
+
+.footer-links li {
+    margin: 0 15px; /* Add space between links */
+}
+
+.footer-links a {
+    color: #bdc3c7; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.footer-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+
+
+/* chatbot */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+#chat-container {
+    position: fixed;
+    bottom: 80px; /* Adjust based on your button size */
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    z-index: 1000; /* Above other content */
+}
+
+#chatbot-button {
+    position: fixed;
+    bottom: 20px; /* Position of button */
+    right: 20px; /* Position of button */
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Size of button */
+    height: 60px; /* Size of button */
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Above other content */
+}
+
+#chatbot-button:hover {
+    background-color: #004d40;
+}
+
+#chatbox {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message, .bot-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #cfd8dc;
+    align-self: flex-start;
+}
+
+input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}

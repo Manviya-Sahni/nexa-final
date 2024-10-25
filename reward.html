@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Problem and Rewards</title>
+    <script src="reward.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="reward.css">
+    <script src="../js/shared.js"></script>
+    <link rel="stylesheet" href="chatbot.css"> 
+</head>
+<body>
+    <div class="navbar1">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="nexalogo.jpg" alt="Logo" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="indexfirstpage.html">Home</a></li>
+                <li><a href="about.html" onclick="window.location.href='about.html'">About</a></li>
+                <li>
+                    <a href="#" onclick="window.location.href='resources.html'">Resources</a>
+                </li>
+                <li>
+                    <a href="explore.html">Explore</a>
+                    <ul class="dropdown">
+                        <li><a href="#rewards">Rewards</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="profile">
+                <a href="profile.php">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small_2x/user-profile-icon-free-vector.jpg" alt="Profile" class="profile-icon" />
+                </a>
+            </div>
+        </nav>
+    
+        <audio id="resourceAudio" src="audio"></audio>
+     <!-- Ensure this path is correct -->
+    
+        <div class="content">
+            <div class="about-section" id="about-section">
+                <h2>About Nexa</h2>
+                <p>Nexa is dedicated to providing high-quality educational resources and therapy sessions for children with various learning disabilities. We understand that each child is unique, and our programs are tailored to meet their individual needs.</p>
+                <p>Our expert tutors are trained to offer support and guidance to children facing challenges such as autism, dyslexia, and other learning disabilities. We believe in creating an inclusive environment where every child can thrive and reach their full potential.</p>
+                <p>Join us on this journey to make a positive impact in the lives of children and their families.</p>
+            </div>
+        </div>
+    
+    
+        <script src="reward.js" defer></script> <!-- Link to your JavaScript file -->
+    </div>
+
+
+    <div class="tutors">
+        <!-- class for cards -->
+        <div class="tutor-cards" id="tutorCards">
+            <!-- Tutor cards will be injected here -->
+        </div>
+
+        <!-- cards -->
+        <script>
+            // Sample data structure for tutors
+            const tutors = {
+                en: [
+                    {
+                        name: "Tanuj Dev",
+                        age: 23,
+                        location: "Uttarakhand",
+                        TimeSlot: "11:00 am - 12:30 pm",
+                        specialization: "Expert in teaching strategies for children with Dyslexia.",
+                        language: "English",
+                        image: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg"
+                    },
+                    {
+                        name: "Sunitha Ramadurai ",
+                        age: 29,
+                        location: "Bangalore",
+                        TimeSlot: "1:00 pm - 2:30 pm",
+                        specialization: "Life Coaching on Confidence and Learning Skills",
+                        language: "English",
+                        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_UKh-Sxj0o9C2HTj7YGbwO99A7r-KY9Jlev6Zb5EuEMG2_bFvRv4k8X1Fgfxu0yR8Cko&usqp=CAU"
+                    },
+                    {
+                        name: "Silpa Jasti",
+                        age: 31,
+                        location: "Chennai",
+                        TimeSlot: "5:00 pm - 6.30 pm",
+                        specialization: "Special Educator",
+                        language: "English",
+                        image: "https://media.licdn.com/dms/image/v2/D5603AQGQ4nSxF34HiA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709307412105?e=2147483647&v=beta&t=OZC6tVi_DfVEOqvPSCS7wJFIwoJRlDSIZtKpvtHWVUY"
+                    },
+                    {
+                        name: "Parth Vuroy",
+                        age: 29,
+                        location: "Rajasthan",
+                        TimeSlot: "9.30 pm - 11:00 pm",
+                        specialization: "Special Educator, Child and Adolescent Counsellor",
+                        language: "English",
+                        image: "https://img.freepik.com/free-photo/closeup-young-hispanic-man-casuals-studio_662251-600.jpg"
+                    }
+                    // Add more English tutors as needed
+                ],
+                hi: [
+                    {
+                        name: "Gaurang Mehra",
+                        age: 30,
+                        location: "Delhi",
+                        TimeSlot: "11:00 am - 12:30 pm",
+                        specialization: "Expert in teaching strategies for children with Dyslexia.",
+                        language: "Hindi",
+                        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXF5ACUpC_BsOD5ntbFmDq4KC2xCESbHoMwQ&s"
+                    },
+                    {
+                        name: "Dr Jyoti Bajaj",
+                        age: 34,
+                        location: "Mumbai",
+                        TimeSlot: "1:00 pm - 2:30 pm",
+                        specialization: "Specialist in ADHD, focusing on interactive learning.",
+                        language: "Hindi",
+                        image: "https://media.istockphoto.com/id/1029826628/id/foto/one-confident-attractive-indian-businesswoman-gambar-saham.jpg?s=170667a&w=0&k=20&c=Fh_2sME0zuxPWhK0XezV6md_6rQ9ZNXXvSS1KSZi7cs="
+                    },
+                    {
+                        name: "Satakshi Mishra",
+                        age: 28,
+                        location: "karnataka",
+                        TimeSlot: "5:00 pm - 6.30 pm",
+                        specialization: "Special Educator, Counsellor",
+                        language: "Hindi",
+                        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHaB5v2LT-XJNfp2UHlzOHuDd04cys9RIif6CvYfAmBPEKWLC371VTd0aJGezVda1Ykw0&usqp=CAU"
+                    },
+                    {
+                        name: "Jatin Pandey",
+                        age: 29,
+                        location: "Bangalore",
+                        TimeSlot: "9.30 pm - 11:00 pm",
+                        specialization: "Special educator and counselor for CWSN.",
+                        language: "Hindi",
+                        image: "https://plus.unsplash.com/premium_photo-1682089869602-2ec199cc501a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ3V5fGVufDB8fDB8fHww"
+                    }
+                    // Add more Hindi tutors as needed
+                ]
+            };
+
+            function displayTutors() {
+                const language = localStorage.getItem('selectedLanguage');
+                const tutorCards = document.getElementById('tutorCards');
+                tutorCards.innerHTML = ''; // Clear existing cards
+
+                if (language && tutors[language]) {
+                    tutors[language].forEach(tutor => {
+                        const card = document.createElement('div');
+                        card.classList.add('tutor-card');
+
+                        card.innerHTML = `
+                        <a href="tutor-details.html?tutor=${tutor.name}" class="tutor-card">
+                            <div class="card-left">
+                                <img src="${tutor.image}" alt="${tutor.name}">
+                            </div>
+                            <div class="card-right">
+                                <h3>${tutor.name}</h3>
+                                <p class="agepara">Age: ${tutor.age}</p>
+                                <p class="specificationpara">${tutor.specialization}</p>
+                                <p><i class="fa-solid fa-location-dot"></i>Location:  ${tutor.location}</p>
+                                <p><i class="fa-solid fa-clock"></i>: ${tutor.TimeSlot}</p>
+                                <p><i class="fa-solid fa-language"></i>Language: ${tutor.language}</p>
+                                </div>
+                        </a>
+                        `;
+                        
+                        tutorCards.appendChild(card);
+                    });
+                } else {
+                    tutorCards.innerHTML = '<p>No tutors available.</p>';
+                }
+            }
+
+            // Call displayTutors on page load
+            window.onload = displayTutors;
+        </script>
+    </div>
+
+    <h1 class="threeblockh1">Progress Report</h1>
+    <div class="threeblock">
+        <div class="firstblock">
+            <div class="reward-card">
+                <h2>Your Coin Count</h2>
+                <div class="coin-count" id="coinCount">0 Coins</div>
+                <div class="reward-details">
+                    <p>🏅 Daily Visit Reward: <strong>1 Coin</strong></p>
+                    <p>🎯 Task Completion Reward: <strong>5 Coins</strong></p>
+                    <p>Stay active to earn more rewards!</p>
+                </div>
+                <button id="goToProblemBtn">Go to Today's Problem</button>
+
+            </div>
+
+
+            <div class="daily-problem" id="dailyProblem">
+                <div class="problem-card">
+                    <h2>Today's Problem</h2>
+                    <p id="problemText"></p>
+                    <input type="text" id="userAnswer" placeholder="Enter your answer">
+                    <button id="submitAnswerBtn">Submit Answer</button>
+                    <div id="submissionMessage"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="secondblock">
+            <div class="challenges-card">
+                <h2>Challenges for Disabilities</h2>
+                <p>Improve your skills and fitness with our tailored exercises.</p>
+                <p>Complete the tasks to earn rewards and improve your skills!</p>
+                <button id="moreProblemsBtn">Interactive Exercises</button>
+                <button id="fitnessChallengesBtn">Puzzles</button>
+                <button id="fitnesChallengesBtn">Games</button>
+            </div>
+        
+            <script src="challenges.js"></script>
+        </div>
+
+        <div class="thirdblock">
+            <div class="calendar-container">
+                <h1>Daily Challenge Calendar</h1>
+                <div class="calendar" id="calendar"></div>
+            </div>
+        
+            <script src="script.js"></script>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="nexa2.png" alt="Logo" />
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-socials">
+                    <h3>Connect with Us</h3>
+                    <div class="social-icons">
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXA. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- chatbot  -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <div id="chatbox">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="How are you feeling?" />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Chatbot button -->
+    <button id="chatbot-button" onclick="toggleChat()" title="Chat with us!">
+        💬
+    </button>
+
+    <script src="chatbot.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
